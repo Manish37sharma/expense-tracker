@@ -65,7 +65,6 @@ def get_user():
 def home():
     return send_from_directory('Frontend', 'login.html')
     
-@app.route('/register', methods=['POST'])
 def register():
     d = request.get_json()
     if not d.get('name') or not d.get('email') or not d.get('password'):
