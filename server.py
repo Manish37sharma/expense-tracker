@@ -61,6 +61,10 @@ def get_user():
         return None
 
 # ── Auth ──────────────────────────────────────────────────────
+@app.route('/')
+def home():
+    return send_from_directory('Frontend', 'login.html')
+    
 @app.route('/register', methods=['POST'])
 def register():
     d = request.get_json()
