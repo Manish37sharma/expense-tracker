@@ -7,10 +7,6 @@ import sqlite3, os, datetime, hashlib, jwt
 app = Flask(__name__, static_folder='Frontend', static_url_path='')
 CORS(app)
 
-@app.route('/')
-def home():
-    return send_from_directory(FRONTEND_DIR, 'login.html')
-    
 DB_PATH = os.path.join(os.path.dirname(__file__), 'Database', 'expenses.db')
 SECRET  = 'expense_tracker_secret'
 
