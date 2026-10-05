@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000';
+const API = window.location.origin;
 const CUR = '₹';
 let allTx = [], pieChart, barChart;
 window.location.href = 'index.html';
