@@ -1,7 +1,7 @@
 const API = 'http://localhost:5000';
 const CUR = '₹';
 let allTx = [], pieChart, barChart;
-
+window.location.href = 'index.html';
 // ── Auth guard ────────────────────────────────────────────────
 const token = localStorage.getItem('et_token');
 if (!token) {
