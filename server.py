@@ -7,11 +7,15 @@ import sqlite3, os, datetime, hashlib, jwt
 app = Flask(__name__, static_folder='Frontend', static_url_path='')
 CORS(app)
 
+@app.route('/')
+def home():
+    return send_from_directory(FRONTEND_DIR, 'login.html')
+    
 DB_PATH = os.path.join(os.path.dirname(__file__), 'Database', 'expenses.db')
 SECRET  = 'expense_tracker_secret'
 
 def get_db():
-    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+    os.makedirs(DATABASE_DIR, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
@@ -154,4 +158,6 @@ def summary():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, port=5000)
+
+        if __name__ == '__main__':
+            app.run(debug=True, port=5000)
