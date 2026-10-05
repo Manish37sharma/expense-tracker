@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000';
+const API = window.location.origin;
 
 // Redirect to dashboard if already logged in
 if (localStorage.getItem('et_token')) {
